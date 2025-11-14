@@ -1,11 +1,8 @@
-import demo from "./app";
+jest.mock('../css/style.css', () => ({}));
+jest.mock('../img/goblin.png', () => 'test-goblin.png');
 
-describe("Пример теста", () => {
-  test.each([
-    { str: "Hello!", expected: "Demo: Hello!" },
-    { str: "", expected: "Demo: " },
-    { str: 100, expected: "Demo: 100" },
-  ])("demo($str)", ({ str, expected }) => {
-    expect(demo(str)).toBe(expected);
-  });
+import Game from './app';
+
+test('Jest is configured correctly', () => {
+  expect(1 + 1).toBe(2);
 });
