@@ -1,14 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+    <title>Охота на Гоблинов</title>
+    <link rel="icon" type="image/x-icon" href="img/goblin.png">
 </head>
 <body>
     <div class="game-container">
+        <h1 class="game-title">Охота на Гоблинов</h1>
+        
+        <div class="game-stats">
+            <div class="stat-item">
+                <span class="stat-label">Счет</span>
+                <span id="score-value" class="stat-value">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Пропущено</span>
+                <span id="miss-value" class="stat-value">0/5</span>
+            </div>
+        </div>
+        
         <div id="game-board" class="game-board"></div>
+    </div>
+    
+    <div class="game-controls">
+        <button id="start-btn" class="control-btn start-btn">Старт</button>
+        <button id="stop-btn" class="control-btn stop-btn" disabled>Стоп</button>
+    </div>
+    
+    <div id="game-over" class="game-over-message">
+        <div class="game-over-content">
+            <h2 class="game-over-title">Игра Окончена!</h2>
+            <p class="game-over-score">Ваш счет: <span id="final-score">0</span></p>
+            <button id="restart-btn" class="restart-btn">Играть снова</button>
+        </div>
     </div>
 </body>
 </html>
