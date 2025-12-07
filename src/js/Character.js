@@ -10,11 +10,11 @@ export class Character {
     if (this.element) {
       return this.element;
     }
-    
-    this.element = document.createElement('img');
+
+    this.element = document.createElement("img");
     this.element.src = this.imageSrc;
-    this.element.className = 'character';
-    this.element.alt = 'Game Character';
+    this.element.className = "character";
+    this.element.alt = "Game Character";
     return this.element;
   }
 
@@ -24,21 +24,21 @@ export class Character {
       this.hideTimeout = null;
     }
     this.create();
-    
+
     if (this.element.parentNode) {
       this.element.parentNode.append(this.element);
     }
     cell.append(this.element);
     this.isVisible = true;
-    
+
     // Анимация появления
-    this.element.style.opacity = '0';
-    this.element.style.transform = 'scale(0.5)';
-    this.element.style.transition = 'opacity 50ms, transform 50ms';
+    this.element.style.opacity = "0";
+    this.element.style.transform = "scale(0.5)";
+    this.element.style.transition = "opacity 50ms, transform 50ms";
 
     requestAnimationFrame(() => {
-      this.element.style.opacity = '1';
-      this.element.style.transform = 'scale(1)';
+      this.element.style.opacity = "1";
+      this.element.style.transform = "scale(1)";
     });
   }
 
@@ -49,12 +49,12 @@ export class Character {
       this.hideTimeout = null;
     }
     this.isVisible = false;
-    
+
     // Анимация исчезновения
-    this.element.style.transition = 'opacity 300ms, transform 300ms';
-    this.element.style.opacity = '0';
-    this.element.style.transform = 'scale(0.5)';
-    
+    this.element.style.transition = "opacity 300ms, transform 300ms";
+    this.element.style.opacity = "0";
+    this.element.style.transform = "scale(0.5)";
+
     this.hideTimeout = setTimeout(() => {
       if (this.element.parentNode) {
         this.element.parentNode.append(this.element);
